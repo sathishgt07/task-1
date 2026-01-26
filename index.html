@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 10px;
+      outline: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #00ffcc;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #00ddb3;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffeb3b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>👋 Hello Dynamic Page</h2>
+    <p>Enter your name:</p>
+
+    <input type="text" id="nameInput" placeholder="Your name da...">
+    <br>
+    <button onclick="showMessage()">Submit</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById("nameInput").value;
+
+      if (name.trim() === "") {
+        document.getElementById("output").innerHTML = "❌ Name empty da!";
+      } else {
+        document.getElementById("output").innerHTML =
+          `🔥 Welcome <b>${name}</b>! This page is dynamic 😎`;
+      }
+    }
+  </script>
+
+</body>
+</html>
